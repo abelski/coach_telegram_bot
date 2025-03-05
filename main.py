@@ -1,9 +1,12 @@
+import os
 from typing import final
 from  telegram import Update
 from  telegram.ext import Application, CommandHandler, MessageHandler, filters,ContextTypes
+from dotenv import load_dotenv
 
-TOKEN: final = "5401619222:AAGK7MWUB8IzxhLyyYUuiYoX-JDDSuCljPY"
-USERNAME: final = "@klaipeda_molas_kite_bot"
+load_dotenv()
+TOKEN: final = os.getenv("TOKEN")
+USERNAME: final = os.getenv("USERNAME")
 
 # Commands
 async def start_command(update: Update, context: ContextTypes):
