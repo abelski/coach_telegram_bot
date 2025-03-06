@@ -4,6 +4,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 from dotenv import load_dotenv
 from services.conversationService import answerQuestion
+import services.str_constants as constants
 
 load_dotenv()
 TOKEN: final = os.getenv("TOKEN")
@@ -12,7 +13,7 @@ USERNAME: final = os.getenv("USERNAME")
 
 # Commands
 async def start_command(update: Update, context: ContextTypes):
-    await update.message.reply_text("Hello! I'm a bot for freedive coaching.")
+    await update.message.reply_text(constants.START_COMMAND_RESPONSE)
 
 
 async def help_command(update: Update, context: ContextTypes):
@@ -39,11 +40,11 @@ async def handle_message(update: Update, context: ContextTypes):
         response = handle_response(user, update.message.text)
         await update.message.reply_text(response)
     else:
-        await update.message.reply_text("I can only talk in private chats")
+        await update.message.reply_text(constants.PRIVATE_CHAT_ONLY_RESPONSE)
 
 
 async def error(update: Update, context: ContextTypes):
-    await update.message.reply_text("An error occurred")
+    await update.message.reply_text(constants.ERROR_RESPONSE)
 
 
 # Main runner
