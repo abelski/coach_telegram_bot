@@ -3,6 +3,7 @@ from typing import final
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 from dotenv import load_dotenv
+from conversationService import answerQuestion
 
 load_dotenv()
 TOKEN: final = os.getenv("TOKEN")
@@ -26,10 +27,7 @@ async def custom_command(update: Update, context: ContextTypes):
 
 def handle_response(text: str) -> str:
     processsed_text = text.lower()
-    if "hello" in processsed_text:
-        return "Hello! I'm a bot for freedive coaching?"
-
-    return "I don't understand you"
+    return answerQuestion(processsed_text)
 
 
 async def handle_message(update: Update, context: ContextTypes):
