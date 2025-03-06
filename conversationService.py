@@ -1,7 +1,11 @@
+import userService
 
 
-#function for answer user's question return string
-def answerQuestion(question):
+# function for answer user's question return string
+def answerQuestion(userid, question):
+    if userService.isBlackListedUser(userid):
+        return "You are blacklisted"
+
     if question == "what is your name?":
         return "My name is Chatbot"
     elif question == "what is your age?":
@@ -10,4 +14,3 @@ def answerQuestion(question):
         return "I like all colors"
     else:
         return "I don't understand you"
-
