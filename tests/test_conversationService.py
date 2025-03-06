@@ -1,5 +1,5 @@
 import unittest
-from conversationService import answerQuestion
+from services.conversationService import answerQuestion
 
 
 class TestAnswerQuestion(unittest.TestCase):

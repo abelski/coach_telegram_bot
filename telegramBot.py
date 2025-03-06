@@ -3,7 +3,7 @@ from typing import final
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 from dotenv import load_dotenv
-from conversationService import answerQuestion
+from services.conversationService import answerQuestion
 
 load_dotenv()
 TOKEN: final = os.getenv("TOKEN")
