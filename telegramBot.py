@@ -23,12 +23,12 @@ async def custom_command(update: Update, context: ContextTypes):
     await update.message.reply_text("custom")
 
 
-# Responceses
+# Responses
 
 def handle_response(user, text: str) -> str:
     print(f'user: {user}')
-    processsed_text = text.lower()
-    return answerQuestion(user.id,processsed_text)
+    processed_text = text.lower()
+    return answerQuestion(user.id, processed_text)
 
 
 async def handle_message(update: Update, context: ContextTypes):
@@ -43,7 +43,7 @@ async def handle_message(update: Update, context: ContextTypes):
 
 
 async def error(update: Update, context: ContextTypes):
-    await update.message.reply_text("An error occured")
+    await update.message.reply_text("An error occurred")
 
 
 # Main runner

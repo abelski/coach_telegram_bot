@@ -2,7 +2,7 @@ import services.userService as userService
 
 
 # function for answer user's question return string
-def answerQuestion(userid, question):
+def answerQuestion(userid: str, question: str) -> str:
     if userService.isBlackListedUser(userid):
         return "You are blacklisted"
 
