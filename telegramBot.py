@@ -3,7 +3,7 @@ from typing import final
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 from dotenv import load_dotenv
-from services.conversation_service import answerQuestion
+from services.conversation_service import answer_question
 import services.str_constants as constants
 
 load_dotenv()
@@ -29,7 +29,7 @@ async def custom_command(update: Update, context: ContextTypes):
 def handle_response(user, text: str) -> str:
     print(f'user: {user}')
     processed_text = text.lower()
-    return answerQuestion(user.id, processed_text)
+    return answer_question(str(user.id), processed_text)
 
 
 async def handle_message(update: Update, context: ContextTypes):

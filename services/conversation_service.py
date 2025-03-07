@@ -3,7 +3,7 @@ import services.str_constants as constants
 
 
 # function for answer user's question return string
-def answerQuestion(userid: str, question: str) -> str:
+def answer_question(userid: str, question: str) -> str:
     if user_service.is_black_listed_user(userid):
         return constants.BLACKLISTED_USER_RESPONSE
 

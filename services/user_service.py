@@ -8,7 +8,7 @@ def is_black_listed_user(userid: str) -> bool:
 
 
 # Define a constant whitelist of user IDs
-_WHITELISTED_USER_IDS = {473372343, 456, 789}
+_WHITELISTED_USER_IDS = {"473372343", "456", "789"}
 
 
 # Function to check if user_id exists in the whitelist
